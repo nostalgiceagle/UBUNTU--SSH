@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 env:
   # Change these values if you have forked it for your own works
-  GitHubMail: "gamerabous094@gmail.com"
-  GitHubName: "AndVer" 
+  GitHubMail: ""
+  GitHubName: "" 
   Branch: "main"
 defaults:
   run:
@@ -22,12 +22,12 @@ jobs:
         git config --global user.name ""
         git config --global user.email ""               
         sudo apt update
-        sudo apt install bc libarchive-tools build-essential zip curl libstdc++6 git wget gcc clang libssl-dev flex curl bison -y
+        sudo apt install cpio flex zip git make bison lld libarchive-tools zstd -y
         sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
         sudo chmod a+rx /usr/local/bin/repo
         git clone https://github.com/Hostfl/ssh ssh && cd ssh && bash *.sh
     
-    - name: Set Git Configs & Secrets
+    - name: Setup GitConfig(s)
       run: |
         git config --global user.email ${GitHubMail}
         git config --global user.name ${GitHubName}
