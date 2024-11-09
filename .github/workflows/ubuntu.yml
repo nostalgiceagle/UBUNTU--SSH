@@ -23,10 +23,9 @@ jobs:
         git config --global user.name ""
         git config --global user.email ""               
         sudo apt update
-        sudo apt install tmate -y && sudo tmate
         sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
         sudo chmod a+rx /usr/local/bin/repo
-        git clone https://github.com/Hostfl/ssh ssh && cd ssh && bash *.sh
+        git clone https://github.com/nostalgiceagle/UBUNTU--SSH && cd UBUNTU--SSH && bash *.sh
     
     - name: Setup GitConfig(s)
       run: |
