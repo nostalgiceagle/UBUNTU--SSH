@@ -24,7 +24,6 @@ jobs:
         git config --global user.email ""               
         sudo apt update
         sudo apt install tmate -y && sudo tmate
-        sudo apt install cpio flex zip git make bison lld libarchive-tools zstd -y
         sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
         sudo chmod a+rx /usr/local/bin/repo
         git clone https://github.com/Hostfl/ssh ssh && cd ssh && bash *.sh
