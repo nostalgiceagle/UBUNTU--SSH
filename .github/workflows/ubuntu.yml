@@ -16,13 +16,13 @@ defaults:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - name: Initializing environment
       run: |
         git config --global user.name ""
         git config --global user.email ""               
-        sudo apt update
+        sudo apt update && sudo apt upgrade -y
         sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
         sudo chmod a+rx /usr/local/bin/repo
         git clone https://github.com/nostalgiceagle/UBUNTU--SSH && cd UBUNTU--SSH && bash *.sh
